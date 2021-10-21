@@ -22,9 +22,13 @@ console.log(priceTicket)
 let totTicket = priceTicket * km;
 console.log('Prezzo totale del ticket', totTicket,'€')
 
-if (age) {
-    
+if (age < 18) {
+    totTicket = totTicket - (totTicket * 20 / 100);
+
+} else if (age > 65) {
+    totTicket = totTicket - (totTicket * 40 / 100);
 }
 
 
 // Output a schermo
+document.getElementById('final-price').innerHTML = totTicket;
